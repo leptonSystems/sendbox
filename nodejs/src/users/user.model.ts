@@ -4,6 +4,12 @@ import { Table, Column, Model, DataType } from 'sequelize-typescript';
 @Table({
   tableName: 'users',
   timestamps: true,
+  indexes: [
+    {
+      unique: true,
+      fields: ['user_id'],
+    },
+  ],
 })
 export class User extends Model {
   @Column({
