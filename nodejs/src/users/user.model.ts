@@ -1,33 +1,28 @@
+// user.model.ts
 import { Table, Column, Model, DataType } from 'sequelize-typescript';
 
-//TODO: change this table in the next PR
-@Table({ tableName: 'users' })
+@Table({
+  tableName: 'users',
+  timestamps: true,
+})
 export class User extends Model {
   @Column({
     type: DataType.INTEGER,
-    unique: true,
-    allowNull: false,
-    autoIncrement: true,
     primaryKey: true,
+    autoIncrement: true,
+    allowNull: false,
   })
   id: number;
 
   @Column({
-    type: DataType.STRING,
-    unique: true,
+    type: DataType.STRING(255),
     allowNull: false,
   })
   email: string;
 
   @Column({
-    type: DataType.STRING,
+    type: DataType.STRING(255),
     allowNull: false,
   })
-  password: string;
-
-  @Column({
-    type: DataType.STRING,
-    defaultValue: null,
-  })
-  token: string;
+  password_hash: string;
 }
