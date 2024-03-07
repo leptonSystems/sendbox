@@ -24,14 +24,3 @@ CREATE TABLE contacts (
     INDEX idx_user_id (user_id), 
     INDEX idx_phone_number (phone_number) 
 );
-
--- Updating time zones in both users and contacts tables
-UPDATE users
-SET 
-    created_at = created_at AT TIME ZONE 'OriginalTimeZone' AT TIME ZONE 'NewTimeZone',
-    updated_at = updated_at AT TIME ZONE 'OriginalTimeZone' AT TIME ZONE 'NewTimeZone';
-
-UPDATE contacts
-SET 
-    created_at = created_at AT TIME ZONE 'OriginalTimeZone' AT TIME ZONE 'NewTimeZone',
-    updated_at = updated_at AT TIME ZONE 'OriginalTimeZone' AT TIME ZONE 'NewTimeZone';
