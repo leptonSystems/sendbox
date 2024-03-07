@@ -5,6 +5,7 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP AT TIME ZONE 'UTC',
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP AT TIME ZONE 'UTC',
     CONSTRAINT unique_user_id UNIQUE (id),
+    INDEX idx_id (id)
     INDEX idx_email (email) 
 );
 
