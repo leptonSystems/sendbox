@@ -4,10 +4,10 @@ install:
 	npm install
 
 build:
-	npm run build
+	nest build
 
 format:
-	npm run format
+	prettier --write \"src/**/*.ts\" \"test/**/*.ts\"
 
 start:
 	nest start
